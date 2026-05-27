@@ -8,6 +8,7 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
   name: {{ .Release.Name }}-controller-manager-metrics-service
+  namespace: {{ include "frp-operator.namespace" . }}
 spec:
   ports:
   - name: https

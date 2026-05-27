@@ -15,6 +15,7 @@ data:
 kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-manager-config
+  namespace: {{ include "frp-operator.namespace" . }}
   labels:
     app.kubernetes.io/name: {{ .Release.Name }}
     helm.sh/chart: {{ template "frp-operator.chart" . }}
